@@ -5,16 +5,24 @@ function useRequests() {
   const { token } = useGlobal();
 
   async function get() {
+    const bearerToken = `Bearer ${token}`;
     try {
-    } catch (error) {
-      toast.messageError(error.message);
-    }
-  }
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/profile`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: bearerToken,
+        },
+      });
+      const data = await response.json();
 
-  async function getOne(route, id) {
-    try {
+      if (!response.ok) {
+        toast.messageError(data); 
+        throw new Error(data);
+      }
+      return data;
     } catch (error) {
-      toast.messageError(error.message);
+      console.log(error)
     }
   }
 
@@ -86,7 +94,6 @@ function useRequests() {
 
   return {
     get,
-    getOne,
     post,
     del,
     put,

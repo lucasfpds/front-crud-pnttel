@@ -215,10 +215,14 @@ export default function EditUser() {
     const newUser = await requests.put(body, "profile");
     console.log(newUser);
 
-    if (newUser) {
-      toast.messageSuccess("Usuário atualizado com sucesso!");
-      setCard(true);
+    if (!newUser) {
+      return toast.messageError("Erro ao atualizar perfil");
     }
+    toast.messageSuccess("Usuário atualizado com sucesso!");
+    const user = await requests.get();
+    console.log(user);
+    setUser(user);
+    setCard(true);
   }
   console.log("hasError: ", hasError);
   return (
