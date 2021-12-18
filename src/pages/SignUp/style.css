@@ -1,0 +1,112 @@
+.register-container .btn {
+  all: unset;
+  cursor: pointer;
+}
+
+.register-container h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 2.4rem;
+  line-height: 130%;
+  color: #343447;
+  margin-bottom: 3.2rem;
+}
+
+.register-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.register-container .MuiFormControl-root label {
+  background-color: #fff;
+}
+
+.register-form-input {
+  width: 85vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.register-form-input > .MuiFormControl-root,
+.register-form-input > .div-password > .MuiFormControl-root {
+  height: 5vh;
+  width: 40vw;
+  margin: 1rem 0;
+}
+.register-form-input > .div-password p {
+  width: 40vw;
+}
+.register-form-input > .div-password {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register-form-input input {
+  padding: 1rem 1rem;
+}
+.register-form-input h2 {
+  width: 100%;
+  text-align: center;
+  margin: 1rem;
+}
+.form-adress {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.form-adress .MuiFormControl-root, .form-adress .MuiOutlinedInput-root {
+  width: 25vw;
+}
+.form-adress .number,
+.form-adress .number div {
+  width: 11vh;
+}
+.form-adress .cep,
+.form-adress .cep div {
+  width: 15vh;
+}
+.register-container .btn {
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: #f8f8f9;
+  margin-bottom: 1.5rem;
+  background: #ff6854;
+  border-radius: .4rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.register-container .btn:hover {
+  background: #b83220;
+}
+
+.register-container a {
+  text-align: end;
+  font-weight: 600;
+  text-decoration-line: underline;
+  color: #ff6854;
+}
+
+.register-container a:hover {
+  color: #b83220;
+}
+
+.div-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.div-card a:hover{
+  color: #fff;
+}
