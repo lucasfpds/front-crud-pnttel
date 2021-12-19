@@ -23,7 +23,7 @@ import useGlobal from "../../hooks/useGlobal";
 
 export default function EditUser() {
   const requests = useRequests();
-  const { user, setUser, removeUser, token, removeToken, showModalDelete } =
+  const { user, setUser, removeUser, token, showModalMobile, showModalDelete } =
     useGlobal();
   const { adress } = user;
   const [countrys, setCountrys] = useState([]);
@@ -101,7 +101,9 @@ export default function EditUser() {
       setBairro(data.bairro);
       setRua(data.logradouro);
     } else {
-      toast.messageError("CEP não encontrado! Preencha todos os campos manualmente.");
+      toast.messageError(
+        "CEP não encontrado! Preencha todos os campos manualmente."
+      );
     }
   }
 
@@ -246,7 +248,7 @@ export default function EditUser() {
           </div>
         ) : (
           <>
-            {!showModalDelete ? (
+            {!showModalDelete && !showModalMobile ? (
               <>
                 <div className="register-form-input">
                   <h2>ATENÇÃO, preecha todos os campos</h2>
@@ -443,11 +445,11 @@ export default function EditUser() {
                     ) : null}
                   </div>
                 </div>
+                <button className="btn" onClick={handleSubmit}>
+                  Atualizar
+                </button>
               </>
             ) : null}
-            <button className="btn" onClick={handleSubmit}>
-              Atualizar
-            </button>
           </>
         )}
       </div>

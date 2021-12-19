@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import useGlobal from "../../hooks/useGlobal";
 import { Link, useHistory } from "react-router-dom";
 import { ModalDelete } from "../ModalDelete/ModalDelete";
+import ModalMobile from "../ModalMobile/ModalMobile";
 
 export default function Header() {
   const {
@@ -11,6 +12,12 @@ export default function Header() {
     user,
     setUser,
     removeToken,
+    showModalMobile,
+    setShowModalMobile,
+    hamburguer,
+    close,
+    img,
+    setImg,
   } = useGlobal();
   const history = useHistory();
 
@@ -42,6 +49,17 @@ export default function Header() {
         </div>
       ) : null}
       {showModalDelete ? <ModalDelete /> : null}
+      <ModalMobile
+        pathname={pathname}
+        handleLogout={handleLogout}
+        setShowModalDelete={setShowModalDelete}
+        showModalMobile={showModalMobile}
+        setShowModalMobile={setShowModalMobile}
+        hamburguer={hamburguer}
+        close={close}
+        img={img}
+        setImg={setImg}
+      />
     </div>
   );
 }

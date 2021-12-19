@@ -324,7 +324,10 @@ export default function SignUp() {
                   onChange={(event) => setEstado(event.target.value)}
                   value={estado}
                 />
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <FormControl
+                  className="select-country"
+                  sx={{ m: 0, minWidth: 120 }}
+                >
                   <Select
                     value={pais}
                     onChange={handleChangeCountry}

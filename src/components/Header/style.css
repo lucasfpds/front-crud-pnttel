@@ -1,18 +1,38 @@
+.header .modal-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.header .img-modal {
+  display: none;
+  z-index: 3;
+}
 .header {
   background-color: #2d3f51;
   padding: 0.5rem 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: initial;
   top: 0;
   width: 100vw;
   height: 5rem;
 }
-.header h1{
+.header h1 {
   font-size: 3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.header *{
+.header * {
   color: #fff;
 }
 .div-buttons {
@@ -29,11 +49,36 @@
   line-height: 2.5rem;
   color: #f8f8f9;
   background: #ff6854;
-  border-radius: .4rem;
-  padding: .5rem 1.5rem;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1.5rem;
   cursor: pointer;
   text-align: center;
+  white-space: nowrap;
 }
 .div-buttons *:hover {
   background: #b83220;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem 2rem;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .header > .div-buttons {
+    display: none;
+  }
+  .modal-mobile .div-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .header .img-modal {
+    display: block;
+    z-index: 3;
+  }
+  .header .modal-mobile {
+    display: flex;
+  }
 }

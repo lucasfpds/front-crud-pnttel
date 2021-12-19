@@ -5,9 +5,12 @@
 }
 
 .App {
-  position: relative;
-  padding-top: 5rem;
-  /* top: 5rem; */
-  height: 100vh;
+  height: max-content;
 }
 
+
+@media (max-width: 768px) {
+  .App {
+    font-size: 40%;
+  }
+}

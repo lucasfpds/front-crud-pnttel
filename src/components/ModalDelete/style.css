@@ -5,7 +5,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 5;
 }
 .div-modal-delete .modal-delete {
   position: absolute;
@@ -51,4 +51,18 @@
 }
 .div-modal-delete .btn-delete:hover {
   background: #971706;
+}
+
+@media (max-width: 768px) {
+  .div-modal-delete .modal-delete {
+    width: 60vw;
+    height: 40vh;
+  }
+
+  .div-modal-delete h2 {
+    font-size: 1.5rem;
+  }
+  .div-modal-delete button {
+    font-size: 1rem;
+  }
 }

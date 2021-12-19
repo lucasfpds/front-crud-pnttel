@@ -61,7 +61,8 @@
   flex-wrap: wrap;
   width: 100%;
 }
-.form-adress .MuiFormControl-root, .form-adress .MuiOutlinedInput-root {
+.form-adress .MuiFormControl-root,
+.form-adress .MuiOutlinedInput-root {
   width: 25vw;
 }
 .form-adress .number,
@@ -79,8 +80,8 @@
   color: #f8f8f9;
   margin-bottom: 1.5rem;
   background: #ff6854;
-  border-radius: .4rem;
-  padding: .5rem 1.5rem;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1.5rem;
   cursor: pointer;
   text-align: center;
 }
@@ -107,6 +108,35 @@
   flex-direction: column;
   gap: 2rem;
 }
-.div-card a:hover{
+.div-card a:hover {
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .register-container h2 {
+    font-size: 1.3rem;
+  }
+  .register-form-input {
+    align-items: center;
+    justify-content: center;
+  }
+  .register-form-input > .MuiFormControl-root,
+  .register-form-input > .div-password > .MuiFormControl-root {
+    width: 60vw;
+  }
+  .form-adress .MuiFormControl-root{
+    margin-top: 1rem;
+  }
+  .form-adress .MuiFormControl-root,
+  .form-adress .MuiOutlinedInput-root {
+    width: 40vw;
+  }
+  .form-adress .number,
+  .form-adress .number div {
+    width: 11vh;
+  }
+  .form-adress .cep,
+  .form-adress .cep div {
+    width: 15vh;
+  }
 }

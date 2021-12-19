@@ -7,19 +7,31 @@ import toast from "../../helpers/toast";
 
 export function ModalDelete() {
   const requests = useRequests();
-  const { setShowModalDelete, setUser, removeToken, showModalDelete } = useGlobal();
+  const {
+    setShowModalDelete,
+    setUser,
+    removeToken,
+    setShowModalMobile,
+    showModalMobile,
+    hamburguer,
+    close,
+    img,
+    setImg,
+  } = useGlobal();
   const history = useHistory();
 
   async function handleDeleteUser() {
     const result = await requests.del("profile");
-    if (result){
-        history.push("/sign-in");
-        setUser({ name: "Visitante" });
-        removeToken();
-        setShowModalDelete(false);
-        toast.messageSuccess("Usuário excluído com sucesso!");
+    if (result) {
+      history.push("/sign-in");
+      setUser({ name: "Visitante" });
+      removeToken();
+      setShowModalDelete(false);
+      img === hamburguer ? setImg(close) : setImg(hamburguer);
+      setShowModalMobile(!showModalMobile);
+      toast.messageSuccess("Usuário excluído com sucesso!");
     } else {
-        toast.messageError("Erro ao excluir usuário!");
+      toast.messageError("Erro ao excluir usuário!");
     }
   }
   return (
