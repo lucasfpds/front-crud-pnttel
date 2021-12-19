@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.css";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import Header from "./components/Header/Header";
