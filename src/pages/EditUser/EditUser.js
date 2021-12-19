@@ -1,4 +1,3 @@
-import "./style.css";
 import { useEffect, useState } from "react";
 import check_cadastro from "../../assets/check_cadastro.png";
 import IconButton from "@mui/material/IconButton";
@@ -248,12 +247,14 @@ export default function EditUser() {
                   />
                   <TextField
                     label="CPF*"
+                    className="cpf"
                     variant="outlined"
                     value={cpf}
                     onChange={(event) => setCpf(Number(event.target.value))}
                   />
                   <TextField
                     label="PIS*"
+                    className="pis"
                     variant="outlined"
                     value={pis}
                     onChange={(event) => setPis(Number(event.target.value))}

@@ -118,11 +118,11 @@
   }
   .register-form-input {
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
   .register-form-input > .MuiFormControl-root,
   .register-form-input > .div-password > .MuiFormControl-root {
-    width: 60vw;
+    width: 40vw;
   }
   .form-adress .MuiFormControl-root{
     margin-top: 1rem;
