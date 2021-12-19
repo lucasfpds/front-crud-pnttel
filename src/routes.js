@@ -28,13 +28,20 @@ function Routes() {
         <Switch>
           <GlobalProvider>
             <Header />
-            <Route path={["/", "/sign-in"]} exact component={SignIn} />
-            <Route path="/sign-up" exact component={SignUp} />
-            <ProtectedRoutes>
-              {/* <Route path="/home" exact component={InputAdornments} /> */}
-              <Route path="/edit" exact component={EditUser} />
-
-            </ProtectedRoutes>
+            <div
+              style={{
+                minHeight: "100vh",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Route path={["/", "/sign-in"]} exact component={SignIn} />
+              <Route path="/sign-up" exact component={SignUp} />
+              <ProtectedRoutes>
+                {/* <Route path="/home" exact component={InputAdornments} /> */}
+                <Route path="/edit" exact component={EditUser} />
+              </ProtectedRoutes>
+            </div>
           </GlobalProvider>
         </Switch>
       </Router>
