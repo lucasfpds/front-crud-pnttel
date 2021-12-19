@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocalStorage } from "react-use";
 import hamburguer from "../assets/hamburguer.svg";
 import close from "../assets/close.svg";

@@ -18,13 +18,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
-import { getCountrys, getCep, states } from "../../utils/functions";
+import { getCountrys, getCep } from "../../utils/getAdressFunctions";
+import states from "../../utils/states";
 import useGlobal from "../../hooks/useGlobal";
 
 export default function EditUser() {
   const requests = useRequests();
-  const { user, setUser, removeUser, token, showModalMobile, showModalDelete } =
-    useGlobal();
+  const { user, setUser, showModalMobile, showModalDelete } = useGlobal();
   const { adress } = user;
   const [countrys, setCountrys] = useState([]);
 
@@ -178,21 +178,6 @@ export default function EditUser() {
       return toast.messageError("Preencha todos os campos corretamente.");
     }
 
-    console.log(
-      values.password,
-      valuesConfirm.password,
-      name,
-      email,
-      cpf,
-      pis,
-      pais,
-      estado,
-      municipio,
-      cep,
-      rua,
-      numero,
-      bairro
-    );
     if (hasError[0])
       return toast.messageError(
         "Verifique se todos os campos estão preenchidos corretamente"
@@ -215,18 +200,15 @@ export default function EditUser() {
       },
     };
     const newUser = await requests.put(body, "profile");
-    console.log(newUser);
 
     if (!newUser) {
       return toast.messageError("Erro ao atualizar perfil");
     }
     toast.messageSuccess("Usuário atualizado com sucesso!");
     const user = await requests.get();
-    console.log(user);
     setUser(user);
     setCard(true);
   }
-  console.log("hasError: ", hasError);
   return (
     <>
       <div className="register-container">
@@ -340,7 +322,7 @@ export default function EditUser() {
                       onChange={(event) => setEstado(event.target.value)}
                       value={estado}
                     />
-                    <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <FormControl sx={{ marginTop: 1, minWidth: 120 }}>
                       <Select
                         value={pais}
                         onChange={handleChangeCountry}

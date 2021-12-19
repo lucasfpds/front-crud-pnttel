@@ -1,5 +1,4 @@
 import "./style.css";
-import { useState, useEffect } from "react";
 import useGlobal from "../../hooks/useGlobal";
 import { Link, useHistory } from "react-router-dom";
 import { ModalDelete } from "../ModalDelete/ModalDelete";
@@ -21,14 +20,11 @@ export default function Header() {
   } = useGlobal();
   const history = useHistory();
 
-  console.log(user);
   function handleLogout() {
     removeToken();
     setUser({ name: "Visitante" });
     history.push("/sign-in");
   }
-  console.log(history);
-  console.log(user);
   const { pathname } = history.location;
   return (
     <div className="header">

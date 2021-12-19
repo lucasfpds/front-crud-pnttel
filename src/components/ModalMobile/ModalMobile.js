@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ModalDelete } from "../ModalDelete/ModalDelete";
 
 export default function ModalMobile(props) {
   const {
     pathname,
     handleLogout,
     setShowModalDelete,
-    showModalDelete,
     showModalMobile,
     setShowModalMobile,
     hamburguer,

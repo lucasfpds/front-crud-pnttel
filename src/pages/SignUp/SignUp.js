@@ -2,8 +2,6 @@
 import "./style.css";
 import { useEffect, useState } from "react";
 import check_cadastro from "../../assets/check_cadastro.png";
-import Rectangle_register_done from "../../assets/Rectangle_register_done.png";
-import Rectangle_register_next from "../../assets/Rectangle_register_next.png";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
@@ -21,7 +19,8 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
-import { getCountrys, getCep, states } from "../../utils/functions";
+import { getCountrys, getCep } from "../../utils/getAdressFunctions";
+import states from "../../utils/states";
 
 export default function SignUp() {
   const requests = useRequests();
@@ -173,21 +172,6 @@ export default function SignUp() {
       return toast.messageError("Preencha todos os campos corretamente.");
     }
 
-    console.log(
-      values.password,
-      valuesConfirm.password,
-      name,
-      email,
-      cpf,
-      pis,
-      pais,
-      estado,
-      municipio,
-      cep,
-      rua,
-      numero,
-      bairro
-    );
     if (hasError[0])
       return toast.messageError(
         "Verifique se todos os campos estão preenchidos corretamente"
@@ -210,14 +194,12 @@ export default function SignUp() {
       },
     };
     const newUser = await requests.post(body, "users");
-    console.log(newUser);
 
     if (newUser) {
       toast.messageSuccess("Cadastro realizado com sucesso!");
       setCard(true);
     }
   }
-  console.log("hasError: ", hasError);
   return (
     <>
       <div className="register-container">
@@ -326,7 +308,7 @@ export default function SignUp() {
                 />
                 <FormControl
                   className="select-country"
-                  sx={{ m: 0, minWidth: 120 }}
+                  sx={{ marginTop: 1, minWidth: 120 }}
                 >
                   <Select
                     value={pais}

@@ -17,7 +17,7 @@ import InputLabel from "@mui/material/InputLabel";
 
 function SignIn() {
   const [identifier, setIdentifier] = useState("");
-  const { user, setUser, token, setToken } = useGlobal();
+  const { setUser, token, setToken } = useGlobal();
   const history = useHistory();
   const requests = useRequests();
 
@@ -59,29 +59,6 @@ function SignIn() {
     const body = { identifier, password: values.password };
 
     const result = await requests.post(body, "login");
-    console.log(result);
-    //   {
-    //     "user": {
-    //         "id": 2,
-    //         "name": "asdf",
-    //         "email": "lucas@email.com",
-    //         "cpf": "12345678910",
-    //         "pis": "12345678910",
-    //         "adress": {
-    //             "adress_id": 2,
-    //             "user_id": 2,
-    //             "cep": "57044116",
-    //             "rua": "Rua N",
-    //             "numero": "44",
-    //             "complemento": "asdf",
-    //             "bairro": "São Jorge",
-    //             "municipio": "Maceió",
-    //             "estado": "Alagoas",
-    //             "pais": "Brazil"
-    //         }
-    //     },
-    //     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjM5ODQwNzQxLCJleHAiOjE2Mzk4Njk1NDF9._Ol9D7SSxOggi-mFu2Q9aC039-8GlfvMY4xANKmsTqY"
-    // }
     if (result) {
       setToken(result.token);
       history.push("/home");

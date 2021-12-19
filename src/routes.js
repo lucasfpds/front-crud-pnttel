@@ -1,7 +1,6 @@
 import "./App.css";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
-import InputAdornments from "./components/InputAdornments/InputAdornments";
 import Header from "./components/Header/Header";
 import {
   BrowserRouter as Router,
@@ -30,7 +29,7 @@ function Routes() {
             <Header />
             <div
               style={{
-                minHeight: "100vh",
+                minHeight: "60vh",
                 display: "flex",
                 alignItems: "center",
               }}
@@ -38,7 +37,6 @@ function Routes() {
               <Route path={["/", "/sign-in"]} exact component={SignIn} />
               <Route path="/sign-up" exact component={SignUp} />
               <ProtectedRoutes>
-                {/* <Route path="/home" exact component={InputAdornments} /> */}
                 <Route path="/edit" exact component={EditUser} />
               </ProtectedRoutes>
             </div>

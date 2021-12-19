@@ -1,7 +1,6 @@
 import "./style.css";
-import { useState, useEffect } from "react";
 import useGlobal from "../../hooks/useGlobal";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import useRequests from "../../hooks/useRequests";
 import toast from "../../helpers/toast";
 

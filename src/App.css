@@ -7,7 +7,6 @@
 .App {
   height: max-content;
   min-height: 100vh;
-  /* height: 100vh; */
 }
 
 @media (max-width: 768px) {
