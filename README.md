@@ -1,15 +1,11 @@
 # Kontacts
 
 <p>
-Html | Css | JavaScript | React <br><br>
+Html | Css | JavaScript | React | Heroku <br><br>
 Single page em React utilizando hooks personalizados e próprios do React, Bibliotecas, requisições assíncronas com uso de token, API de contexto, roteamento de páginas e responsividade.
 </p>
 
-Acesse no [site](https://kontacts.ml/)<br>
-
-<h2>📷 Preview</h2>
-
-<img src="./kontacts.gif">
+Acesse no [site](https://dashboard.heroku.com/apps/front-crud-pnttel/)<br>
 
 ## Pré-requisitos
 
@@ -39,12 +35,29 @@ npm install -g Yarn
 yarn install
 ```
 
-4. Start da aplicação:
+
+ 4. 🔒 Environment
+
+Por padrão, após a instalação das dependências a aplicação vem com um módulo de configuração que pode ler todas as variáveis ​​de ambiente do arquivo `.env`.
+Utilizando de uma boa prática, a url da api que busca a cotação do dollar deve ser configurada como variável de ambiente. Então, você deve configurar a variável de ambiente com o valor da url base para pesquisa.
+
+```bash
+# Crie um arquivo .env usando de exemplo o arquivo .env.example
+$ cp .env.example .env
+```
+
+| Key                       | Description                                                          | Default Value              |
+| ------------------------- | -------------------------------------------------------------------- | -------------------------- |
+| REACT_APP_BASE_URL        | URL BASE DA API DE COTAÇÃO                                           | https://exemplodeurl.com   |
+
+
+
+5. Start da aplicação:
 
 ```sh
 yarn start
 ```
 
-5. Aplicação disponível em **http://localhost:3000**
+6. Aplicação disponível em **http://localhost:3000**
 
-Nesta aplicação 100% responsiva o usuário pode fazer um cadastro ou login e assim ter acesso a uma agenda de contatos online, o usuário também pode cadastrar, editar e excluir contatos.
+###### tags: `JavaScript` `Html`  `Css`  `React`  `Heroku`

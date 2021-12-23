@@ -27,7 +27,7 @@ export default function Header() {
   }
   const { pathname } = history.location;
   return (
-    <div className="header">
+    <div data-testid="header" className="header">
       <h1>Olá {user.name}</h1>
       {pathname === "/home" || pathname === "/edit" ? (
         <div className="div-buttons">
