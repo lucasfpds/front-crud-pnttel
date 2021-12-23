@@ -48,7 +48,7 @@ $ cp .env.example .env
 
 | Key                       | Description                                                          | Default Value              |
 | ------------------------- | -------------------------------------------------------------------- | -------------------------- |
-| REACT_APP_BASE_URL        | URL BASE DA API DE COTAÇÃO                                           | https://exemplodeurl.com   |
+| REACT_APP_BASE_URL        | URL BASE DA API DO BACKEND                                           | https://exemplodeurl.com   |
 
 
 
